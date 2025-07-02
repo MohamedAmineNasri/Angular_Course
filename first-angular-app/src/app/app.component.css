@@ -1,0 +1,21 @@
+.active {
+  background-color: green;
+}
+
+.no-active {
+  background-color: red;
+}
+
+.border-true {
+  border: 5px solid yellow;
+  background-color: green;
+}
+.border-false {
+  border: 5px solid blue;
+  background-color: red;
+}
+
+.apple {
+  background-color: red;
+  border-color: 2px solid green;
+}

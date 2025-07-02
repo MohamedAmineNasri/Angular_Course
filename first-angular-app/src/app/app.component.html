@@ -1,0 +1,116 @@
+<h1>First Angular App</h1>
+<h1>{{ title }}</h1>
+<p>{{ 2 + 2 }}</p>
+<!-- <app-navbar></app-navbar>
+<app-header></app-header> -->
+
+<!-- Sting  interpolation  -->
+
+<!-- <img src="{{ imgUrl }}" />  -->
+
+<!-- Property binding -->
+<!-- <img [src]="imgUrl" /> -->
+
+<button disabled="{{ isDisabled }}">
+  Disable button Using String interpolation
+</button>
+<button [disabled]="isDisabled">Disable button Using Property binding</button>
+
+<!-- Class Binding  -->
+
+<button [class.active]="isActive" [class.no-active]="!isActive">
+  Click Me
+</button>
+
+<!-- Task Class Binding -->
+<br />
+<button [class.border-true]="isColor" [class.border-false]="!isColor">
+  Color
+</button>
+
+<!-- String Class Binding  -->
+<br />
+<button [class.apple]="fruitName == 'Apple'">Fruit Ninja</button>
+
+<!-- Style Binding  -->
+<br />
+<button [style.background]="isActive ? 'green' : 'red'">
+  Click Style Binding
+</button>
+<!-- Dom Style properties -->
+<br />
+<button [style.backgroundColor]="isActive ? 'green' : 'red'">
+  Click Style Binding
+</button>
+
+<!-- Multiple Style Bindings  -->
+<br />
+<button
+  [style.backgroundColor]="isActive ? 'green' : 'red'"
+  [style.border]="isActive ? '5px solid blue' : ''"
+>
+  Click Style Binding
+</button>
+
+<!-- Class Binding Vs Style Binding -->
+
+<!-- with class binding we conditionally applied the css classes to an element but with the style binding we conditionally
+applied only css properties   -->
+
+<!-- Event Binding  -->
+<br />
+<p>Event Binding</p>
+<button (click)="onClick()">Click Event Binding</button>
+
+<!-- Mouse Hover Event Binding -->
+<br />
+<p>Mouse Hover Event Binding</p>
+<button (mouseover)="onHover()">Mouse Hover Event Binding</button>
+
+<!-- Key Preessed Event -->
+<br />
+<p>Key Preessed Event</p>
+<input type="text" (keyup)="keyEnter()" />
+
+<!-- Event Filtering 1 -->
+
+<!-- Showing Alert When Hitting The Enter Key -->
+<br />
+<p>Showing Alert When Hitting The Enter Key</p>
+<input type="text" (keyup)="EnterKeyEvent($event)" />
+
+<!-- Event Filtering 2 -->
+<br />
+<p>Event Filtering 2</p>
+<input type="text" (keyup.enter)="KeyUpFiltering()" />
+
+<!-- Template Variable -->
+<p>Template Variable</p>
+<input type="text" (keyup.enter)="KeyUpFilteringTemplateVariable(user)" #user />
+
+<!-- Two Way Data Binding 1 -->
+<br />
+<p>Two Way Data Binding 1</p>
+<input
+  type="text"
+  [value]="userName"
+  #username
+  (keyup.enter)="UpdateUsername(username)"
+/>
+
+<!-- Two Way Data Binding 2 -->
+<br />
+<p>Two Way Data Binding 2</p>
+<input type="text" [(ngModel)]="userName" />
+<br />
+<h3>{{ userName }}</h3>
+
+<!-- One-Way And Two-Way Data Binding -->
+<br />
+<p>One-Way And Two-Way Data Binding</p>
+<input type="text" [value]="textValue" (keyup.enter)="onKeyUp()" />
+
+<br />
+<input type="text" [(ngModel)]="textValue" (keyup.enter)="onKeyUp()" />
+
+{{ textValue }}
